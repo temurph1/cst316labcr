@@ -3,6 +3,13 @@ package banking.primitive.core;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * AccountServer.java
+ * Interface for account creations in a server
+ * @author kevinagary
+ * @since: 2/20/2016
+ *
+ */
 public interface AccountServer {
 
 	/** 

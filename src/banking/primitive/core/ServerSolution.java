@@ -8,6 +8,13 @@ import java.io.*;
 
 import banking.primitive.core.Account.State;
 
+/**
+ * ServerSolution.java
+ * Server that holds all accounts
+ * @author kevinagary
+ * @since: 2/20/2016
+ *
+ */
 class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";
