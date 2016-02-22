@@ -1,6 +1,12 @@
 package banking.primitive.core;
 
-
+/**
+ * AccountServerFactory.java
+ * Singleton factory for returning active accounts
+ * @author kevinagary
+ * @since: 2/20/2016
+ *
+ */
 public class AccountServerFactory {
 
 	protected static AccountServerFactory singleton = null;

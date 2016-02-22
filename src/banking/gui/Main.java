@@ -3,8 +3,10 @@ package banking.gui;
 import javax.swing.JFrame;
 
 /**
+ * Main.java
  * main method for running the program.
  * @author kevinagary
+ * @since: 2/20/2016
  *
  */
 final class Main {
