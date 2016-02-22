@@ -10,12 +10,7 @@ import javax.swing.JFrame;
  *
  */
 final class Main {
-	/**
-	 * Private constructor to address STYLE issue.
-	 */
-	private Main() {
-	}
-	
+
 	/**
 	 * All methods should have a Javadoc according to STYLE.
 	 * @param args command-line arguments
