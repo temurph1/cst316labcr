@@ -51,7 +51,9 @@ public class Savings extends Account {
 		return false;
 	}
 	
-	public String getType() { return "Checking"; }
+	public String getType() { 
+		return "Checking"; 
+	}
 
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
