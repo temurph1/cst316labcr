@@ -18,8 +18,6 @@ public class Savings extends Account {
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
 	}
-
-	public String getType() { return "Checking"; }
 	
 	/**
 	 * A deposit comes with a fee of 50 cents per deposit
@@ -44,14 +42,9 @@ public class Savings extends Account {
 			_numWithdraws++;
 			if (_numWithdraws > 3)
 				_balance = _balance - 1.0f;
-			// KG BVA: should be < 0
-<<<<<<< HEAD
 			if (balance < 0.0f) {
 				setState(State.OVERDRAWN);
-=======
-			if (_balance <= 0.0f) {
-				_setState(State.OVERDRAWN);
->>>>>>> refs/remotes/origin/1206496664-4
+
 			}
 			return true;
 		}
