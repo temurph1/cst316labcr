@@ -24,7 +24,9 @@ public class Checking extends Account {
         return new Checking(name);
     }
 	
-	public String getType() { return "Checking"; }
+	public String getType() { 
+		return "Checking"; 
+	}
 	
 	/**
 	 * A deposit may be made unless the Checking account is closed
