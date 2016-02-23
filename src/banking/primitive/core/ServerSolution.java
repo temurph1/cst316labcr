@@ -88,7 +88,7 @@ class ServerSolution implements AccountServer {
 		if (acc == null) {
 			return false;
 		}
-		acc.setState(State.CLOSED);
+		acc._setState(State.CLOSED);
 		return true;
 	}
 
@@ -104,7 +104,7 @@ class ServerSolution implements AccountServer {
 		List<Account> result = new ArrayList<Account>();
 
 		for (Account acc : accountMap.values()) {
-			if (acc.getState() != State.CLOSED) {
+			if (acc._getState() != State.CLOSED) {
 				result.add(acc);
 			}
 		}
