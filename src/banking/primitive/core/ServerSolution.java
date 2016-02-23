@@ -38,10 +38,12 @@ class ServerSolution implements AccountServer {
 						accountMap.put(acc.getName(), acc);
 				}
 			}
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-		} finally {
+		} 
+		finally {
 			if (in != null) {
 				try {
 					in.close();
@@ -61,15 +63,18 @@ class ServerSolution implements AccountServer {
 		if ("Checking".equals(type)) {
 			acc = new Checking(name, balance);
 
-		} else if ("Savings".equals(type)) {
+		} 
+		else if ("Savings".equals(type)) {
 			acc = new Savings(name, balance);
 
-		} else {
+		} 
+		else {
 			throw new IllegalArgumentException("Bad account type:" + type);
 		}
 		try {
 			accountMap.put(acc.getName(), acc);
-		} catch (Exception exc) {
+		} 
+		catch (Exception exc) {
 			return false;
 		}
 		return true;
@@ -88,7 +93,7 @@ class ServerSolution implements AccountServer {
 		if (acc == null) {
 			return false;
 		}
-		acc.setState(State.CLOSED);
+		acc._setState(State.CLOSED);
 		return true;
 	}
 
@@ -104,7 +109,7 @@ class ServerSolution implements AccountServer {
 		List<Account> result = new ArrayList<Account>();
 
 		for (Account acc : accountMap.values()) {
-			if (acc.getState() != State.CLOSED) {
+			if (acc._getState() != State.CLOSED) {
 				result.add(acc);
 			}
 		}
@@ -120,14 +125,17 @@ class ServerSolution implements AccountServer {
 			for (int i=0; i < accountMap.size(); i++) {
 				out.writeObject(accountMap.get(i));
 			}
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("Could not write file:" + fileName);
-		} finally {
+		} 
+		finally {
 			if (out != null) {
 				try {
 					out.close();
-				} catch (Throwable t) {
+				} 
+				catch (Throwable t) {
 					t.printStackTrace();
 				}
 			}
