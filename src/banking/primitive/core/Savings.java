@@ -8,8 +8,8 @@ package banking.primitive.core;
  *
  */
 public class Savings extends Account {
-	private static final long serialVersionUID = 111L;
-	private int numWithdraws = 0;
+	private static final long _serialVersionUID = 111L;
+	private int _numWithdraws = 0;
 
 	public Savings(String name) {
 		super(name);
@@ -25,10 +25,10 @@ public class Savings extends Account {
 	 * A deposit comes with a fee of 50 cents per deposit
 	 */
 	public boolean deposit(float amount) {
-		if (getState() != State.CLOSED && amount > 0.0f) {
-			balance = balance + amount - 0.50F;
-			if (balance >= 0.0f) {
-				setState(State.OPEN);
+		if (_getState() != State.CLOSED && amount > 0.0f) {
+			_balance = _balance + amount - 0.50F;
+			if (_balance >= 0.0f) {
+				_setState(State.OPEN);
 			}
 		}
 		return false;
@@ -39,14 +39,19 @@ public class Savings extends Account {
 	 * An account whose balance dips below 0 is in an OVERDRAWN state
 	 */
 	public boolean withdraw(float amount) {
-		if (getState() == State.OPEN && amount > 0.0f) {
-			balance = balance - amount;
-			numWithdraws++;
-			if (numWithdraws > 3)
-				balance = balance - 1.0f;
+		if (_getState() == State.OPEN && amount > 0.0f) {
+			_balance = _balance - amount;
+			_numWithdraws++;
+			if (_numWithdraws > 3)
+				_balance = _balance - 1.0f;
 			// KG BVA: should be < 0
+<<<<<<< HEAD
 			if (balance < 0.0f) {
 				setState(State.OVERDRAWN);
+=======
+			if (_balance <= 0.0f) {
+				_setState(State.OVERDRAWN);
+>>>>>>> refs/remotes/origin/1206496664-4
 			}
 			return true;
 		}

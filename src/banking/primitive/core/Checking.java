@@ -9,8 +9,8 @@ package banking.primitive.core;
  */
 public class Checking extends Account {
 
-	private static final long serialVersionUID = 11L;
-	private int numWithdraws = 0;
+	private static final long _serialVersionUID = 11L;
+	private int _numWithdraws = 0;
 	
 	private Checking(String name) {
 		super(name);
@@ -31,10 +31,10 @@ public class Checking extends Account {
 	 * @param float is the deposit amount
 	 */
 	public boolean deposit(float amount) {
-		if (getState() != State.CLOSED && amount > 0.0f) {
-			balance = balance + amount;
-			if (balance >= 0.0f) {
-				setState(State.OPEN);
+		if (_getState() != State.CLOSED && amount > 0.0f) {
+			_balance = _balance + amount;
+			if (_balance >= 0.0f) {
+				_setState(State.OPEN);
 			}
 			return true;
 		}
@@ -47,6 +47,7 @@ public class Checking extends Account {
 	 */
 	public boolean withdraw(float amount) {
 		if (amount > 0.0f) {		
+<<<<<<< HEAD
 			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance >= -100.0f)) {
 				balance = balance - amount;
 				numWithdraws++;
@@ -54,6 +55,16 @@ public class Checking extends Account {
 					balance = balance - 2.0f;
 				if (balance < 0.0f) {
 					setState(State.OVERDRAWN);
+=======
+			// KG: incorrect, last balance check should be >=
+			if (_getState() == State.OPEN || (_getState() == State.OVERDRAWN && _balance > -100.0f)) {
+				_balance = _balance - amount;
+				_numWithdraws++;
+				if (_numWithdraws > 10)
+					_balance = _balance - 2.0f;
+				if (_balance < 0.0f) {
+					_setState(State.OVERDRAWN);
+>>>>>>> refs/remotes/origin/1206496664-4
 				}
 				return true;
 			}
