@@ -47,24 +47,16 @@ public class Checking extends Account {
 	 */
 	public boolean withdraw(float amount) {
 		if (amount > 0.0f) {		
-<<<<<<< HEAD
-			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance >= -100.0f)) {
-				balance = balance - amount;
-				numWithdraws++;
-				if (numWithdraws > 10)
-					balance = balance - 2.0f;
-				if (balance < 0.0f) {
-					setState(State.OVERDRAWN);
-=======
+
 			// KG: incorrect, last balance check should be >=
 			if (_getState() == State.OPEN || (_getState() == State.OVERDRAWN && _balance > -100.0f)) {
 				_balance = _balance - amount;
 				_numWithdraws++;
 				if (_numWithdraws > 10)
 					_balance = _balance - 2.0f;
-				if (_balance < 0.0f) {
+				if (_balance >= 0.0f) {
 					_setState(State.OVERDRAWN);
->>>>>>> refs/remotes/origin/1206496664-4
+
 				}
 				return true;
 			}
