@@ -42,8 +42,8 @@ public class Savings extends Account {
 			_numWithdraws++;
 			if (_numWithdraws > 3)
 				_balance = _balance - 1.0f;
-			if (balance < 0.0f) {
-				setState(State.OVERDRAWN);
+			if (_balance < 0.0f) {
+				_setState(State.OVERDRAWN);
 
 			}
 			return true;
