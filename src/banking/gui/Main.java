@@ -3,17 +3,14 @@ package banking.gui;
 import javax.swing.JFrame;
 
 /**
+ * Main.java
  * main method for running the program.
  * @author kevinagary
+ * @since: 2/20/2016
  *
  */
 final class Main {
-	/**
-	 * Private constructor to address STYLE issue.
-	 */
-	private Main() {
-	}
-	
+
 	/**
 	 * All methods should have a Javadoc according to STYLE.
 	 * @param args command-line arguments
